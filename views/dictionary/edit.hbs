@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <form name="update" action="/:id" method="POST" autocomplete="off">
+        <section class="sec-box">
+            {{#each items}}
+            <div id="sec-div" style="margin: 5px;">
+                <select name="lang{{@index}}:" id="lang{{@index}}:">
+                    <option value="">Choose here</option>
+                    <option value="tr" {{#is lang 'tr'}}selected{{/is}}>Türkçe</option>
+                    <option value="en" {{#is lang 'en'}}selected{{/is}}>English</option>
+                    <option value="de" {{#is lang 'de'}}selected{{/is}}>Deutsch</option>
+                    <option value="fr" {{#is lang 'fr'}}selected{{/is}}>Français</option>
+                </select>
+                <input type="text" id="input{{@index}}:" name="input{{@index}}:" value="{{word}}">
+            </div>
+            {{/each }}
+            <div id="div5" style="margin: 5px;display:none;">
+                <select name="lang5" id="lang5">
+                    <option value="">Choose here</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <input type="text" id="input5" name="input5">
+            </div>
+            <div id="div6" style="margin: 5px;display:none;">
+                <select name="lang6" id="lang6">
+                    <option value="">Choose here</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <input type="text" id="input6" name="input6">
+            </div>
+            <div style="margin: 10px;">
+                <text style="text-decoration-line: underline;" onclick="add();">Add new field</text> 
+            </div>
+            <div>
+                <button class="add">Update</button>
+                <a href="/" class="ekle exit">Cancel</a>
+            </div>
+        </section>
+</body>
+<script>
+    var size = document.getElementsByTagName('input').length-2;
+    var size2 = document.getElementsByTagName('input').length-2;
+    var i = 5;
+
+    function add(){
+        if(size<4){
+            document.getElementById('div'+i).style.display='block';
+            i++;
+            size++;
+        }
+        else{
+            document.getElementById('div5').style.display='none';
+            document.getElementById('div6').style.display='none';
+            i=5;
+            size=size2;
+        }
+    }
+</script>
+</html>

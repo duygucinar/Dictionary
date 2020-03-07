@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h1><center>DICTIONARY</center></h1>
+    <!-- Search -->
+    <section>
+        <div style="font-size: 18px;"><b>Search</b></div>
+        <form action="/" method="GET">
+            <div class="arama">
+                <input type="text" name="search" id="search" style="width: 63%;" placeholder="Search" value="{{s_value}}">
+                <button class="ara">Search</button>
+                <a class="ekle" href="/add" style="float: right;"><b>+</b> Add</a>
+            </div>
+        </form>
+    </section>
+    <!-- Reading records -->
+    <section>
+        {{#if items}}{{else}}<p>No Results</p>{{/if}}
+        {{#each items }}
+        <article>
+            <div style="float: right;">
+                <a href="/{{this._id}}" style="text-decoration: none">Edit</a>
+                <a href="/delete/{{this._id}}" style="text-decoration: none" onclick="return confirm('Are you sure to delete this record ?');">Delete</a>
+            </div>
+            <ul type="disc">
+                <li>ID: {{this._id}}</li>
+                    {{#each this.data}}
+                    <ul type="square">
+                        <li style="margin: 7px;"><strong>{{lang}} :</strong> {{word}}</li>
+                    </ul>
+                    {{/each}}
+                </li>
+            </ul>
+        </article>
+    {{/each}}
+    </section>
+    <!-- Export all records -->
+    <section>
+        <div style="text-align: center">
+            <a href="/export" class="ekle">Export</a>
+        </div>
+    </section>
+</body>
+</html>

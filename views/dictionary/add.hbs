@@ -1,0 +1,91 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <!-- Inserting record -->
+    <form action="/add" method="POST" autocomplete="off">
+        <section class="sec-box">
+            <div style="margin: 5px;">
+                <select name="lang1" id="lang1">
+                    <option value="">Choose here</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <input type="text" id="input1" name="input1">
+            </div>
+            <div style="margin: 5px;">
+                <select name="lang2" id="lang2">
+                    <option value="">Choose here</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <input type="text" id="input2" name="input2">
+            </div>
+            
+            <div id="div3" style="margin: 5px; display:none;">
+                <select name="lang3" id="lang3">
+                    <option value="">Choose here</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <input type="text" id="input3" name="input3">
+            </div>
+            <div id="div4" style="margin: 5px; display:none;">
+                <select name="lang4" id="lang4">
+                    <option value="">Choose here</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <input type="text" id="input4" name="input4">
+            </div>
+            <div style="margin: 10px;">
+                <text style="text-decoration-line: underline;" onclick="add();">Add new field</text> 
+            </div>
+            <div>
+                <button class="add">Add</button>
+                <a href="/" class="ekle exit">Cancel</a>
+            </div>
+           
+    </form>
+    </section> 
+    <hr>
+    <!-- Importing records -->
+    <div style="text-align:center">
+        <form action="/add/import" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <button class="ekle">Import</button>
+        </form>
+    </div>
+</body>
+<script>
+    var i=2;
+    function add(){
+        i++;
+        if(i<5){
+            document.getElementById('div'+i).style.display='block';
+        }
+        if(i==5){
+            i=2;
+            document.getElementById('div3').style.display='none';
+            document.getElementById('div4').style.display='none';
+        }
+    }
+
+
+</script>
+
+</html>

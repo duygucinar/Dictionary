@@ -1,0 +1,144 @@
+/* =================== HTML Elements ==================== */
+
+body{
+    background-color: whitesmoke;
+    padding: 50px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border : solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px;
+    width: 100%;
+}
+
+
+article{
+    background: white;
+    border: solid 1px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px rgba(43, 43, 43, 0.7);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 8px;
+    width: max-content;
+    border: solid 1px;
+    border-radius: 2px;
+}
+
+button{
+    padding: 5px;
+    border-radius: 5px;
+    border: thin;
+    box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover{
+    font-weight: bold;
+}
+
+button.ara{
+    background: lightskyblue;
+    color: white;
+}
+
+button.ara:hover{
+    background: white;
+    color: lightskyblue;
+}
+
+button.add{
+    background: green;
+    color: white;
+}
+
+button.add:hover{
+    background: white;
+    color: green;
+}
+
+
+/* =================== Classes ==================== */
+
+.arama{
+    display: inline;
+}
+
+.ekle{
+    padding: 3px;
+    border-radius: 5px;
+    border: thin;
+    box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, 0.3);
+    background: green;
+    color: white;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ekle:hover{
+    background: white;
+    color: green;
+    font-weight: bold;
+}
+
+.ekle.exit{
+    background: red;
+    float: none;
+    margin-left: 20px;
+    margin: 5px;
+    margin-top: 10px;
+    margin-block-start: 10px;
+}
+
+.ekle.exit:hover{
+    background: white;
+    color: red;
+}
+
+section.sec-box{
+    border: solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    background: white;
+    text-align: center;
+    display: block;
+    margin: 20px;
+}
+
+section.validation{
+    background-color: tomato;
+    color: white;
+    display: none;
+}
+
+.search{
+    padding: 3px;
+    border-radius: 5px;
+    border: thin;
+    box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    background: lightskyblue;
+    color: white;
+}
+
+.search:hover{
+    background: white;
+    color: lightskyblue;
+    font-weight: bold;
+}
+
